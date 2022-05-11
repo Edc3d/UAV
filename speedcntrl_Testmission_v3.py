@@ -30,7 +30,7 @@ PI = math.pi
  # TESTA 1
 
 
-# SETPOINT HEIGHT, XY AND YAW
+# SETPOINT X,Y,Z 
 wp = np.array([[150,150 , 20], [0,150, 20], [-150,-150, 40], [0, 0, 20]])
 max_error = 5 # ?
 max_error_landing = 1
@@ -45,7 +45,7 @@ KP_z = 1
 KI_z = 0.001
 KD_z= 0.1
 # XY
-k_vx = 0.1 #0.1 be4
+k_vx = 0.1 
 k_px = 3
 k_vy = 0.1
 k_py = 3
@@ -187,7 +187,7 @@ if __name__ == '__main__':
                 
                     if(theta < -PI):
                         theta = theta +2*PI
-                print("yaw error", math.degrees(theta)) #HERE
+                
                 angular_speed = theta*Kp_angular + ((theta-angular_errorP)*Kd_angular) + (total_angular_error*Ki_angular) # more
                 angular_errorP = theta
                 total_angular_error = total_angular_error + theta
